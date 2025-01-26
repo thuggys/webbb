@@ -53,7 +53,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-6">
             <blockquote className="font-mono text-lg leading-relaxed border-b pb-6">
-              "The documentation-first approach mirrored real-world development better than any video course."
+              &quot;The documentation-first approach mirrored real-world development better than any video course.&quot;
             </blockquote>
             <div className="text-sm">
               <span className="block font-semibold">@sarah_developer</span>
@@ -62,7 +62,7 @@ export default function Home() {
           </div>
           <div className="space-y-6">
             <blockquote className="font-mono text-lg leading-relaxed border-b pb-6">
-              "Finally found a platform that explains complex concepts in simple, practical terms."
+              &quot;Finally found a platform that explains complex concepts in simple, practical terms.&quot;
             </blockquote>
             <div className="text-sm">
               <span className="block font-semibold">@mike_student</span>
