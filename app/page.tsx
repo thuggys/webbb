@@ -1,6 +1,5 @@
 import Link from "next/link"
 
-import { PageRoutes } from "@/lib/pageroutes"
 import { buttonVariants } from "@/components/ui/button"
 
 export default function Home() {

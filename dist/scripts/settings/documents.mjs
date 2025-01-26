@@ -5,6 +5,10 @@ export const Documents = [
         heading: "Getting started",
         items: [
             {
+                title: "Learn to learn",
+                href: "/welcome",
+            },
+            {
                 title: "Installation",
                 href: "/installation",
             },
