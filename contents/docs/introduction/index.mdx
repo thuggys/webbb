@@ -1,83 +1,163 @@
 ---
 title: Introduction
-description: This section provides an overview of how to get started with the Documents, Next.js Document Starter Kit.
-keywords: ["introduction", "guide", "nextjs", "documents"]
+description: "Welcome to your documentation-driven journey into web development! This guide will take you from the very beginning, step-by-step, to building your first web pages. You'll learn essential computer skills, set up your development environment, and master HTML through clear, concise documentation."
+keywords: [
+  "beginner computer skills",
+  "file management for developers",
+  "developer setup guide",
+  "IDE configuration tutorial",
+  "VS Code setup for web development",
+  "HTML5 fundamentals course",
+  "web page structure basics",
+  "coding environment preparation",
+  "operating system navigation",
+  "file extensions explained",
+  "terminal commands introduction",
+  "semantic HTML elements",
+  "web development learning path",
+  "from zero to HTML",
+  "how computers work for coding"
+]
 ---
 
-![Banner](/images/banner.png "Documents")
+![Banner](/images/cadu-computer.gif "Learning Path")
 
-## Documents
+## Your Web Development Blueprint
 
-Welcome to **Documents**, a powerful and flexible Next.js documentation starter kit designed to simplify the process of creating high-quality, comprehensive
-product documentation, technical manuals, and business guides. Built with **React**, **Tailwind CSS**, and **TypeScript**, this starter kit provides the
-foundation to build your project documentation and knowledge base.
+Embark on an exciting journey from complete beginner to confident web developer! This meticulously designed path will empower you to:
 
-Documents was crafted to streamline the creation, management and showcasing of documentation, allowing developers and teams to focus on the content rather
-than building the underlying structure. This documentation aims to help you get up and running with the kit, exploring the various features and providing
-insights into how to structure and present your content effectively.
+🚀 **Launch Your Journey** by mastering essential computer literacy skills, forming a solid foundation for your coding adventure. Feel free to navigate through the course and skim over the content to get a feel for what's ahead.
+🛠 **Customize Your IDE** by choosing your preferred Integrated Development Environment (we'll be using VS Code) and learning how to navigate documentation effectively, streamlining your workflow.
+🌐 **Build Real Websites** by learning HTML, CSS, and JavaScript, and expanding your skills to modern frameworks like React, Next.js, and Tailwind CSS. It's a good idea to skim through the content to get a feel for the topics covered.
+
+We've designed this path to give you _actual coding superpowers_ through:
+- **Guided skill progression** from absolute basics to portfolio-worthy projects
+- **Hands-on browser experiments** that make concepts stick
+- **Professional workflows** used by industry developers
+- **Instant feedback** through interactive examples
+
+<Note type="tip">
+  🚀 **Hit a learning wall?** Don't worry! We've got your back with 
+  <a href="/docs/introduction/welcome">proven strategies for absorbing technical concepts</a>. 
+  Bookmark this section and return anytime you need a productivity boost!
+</Note>
+
+---
+## Computer Fundamentals
+Master essential computer skills for developers - from file management to system navigation and understanding file types
+keywords: 
+  - file system
+  - folders
+  - file extensions
+  - computer basics
+  - developer fundamentals
+  - system navigation
+---
+
+## Basic Computer Operations
+
+### Navigating Your OS
+- Windows/Mac/Linux interface fundamentals
+- Using mouse vs keyboard navigation
+- Common keyboard shortcuts:
+  - `Win+E` / `Cmd+Space` (File Explorer/Spotlight)
+  - `Ctrl+C` / `Cmd+C` (Copy)
+  - `Ctrl+V` / `Cmd+V` (Paste)
+
+### Files and Folders Management
+```text
+📁 Documents/
+├─ 📁 Projects/
+│  ├─ 📄 report.txt
+│  └─ 📁 images/
+└─ 📁 Downloads/
+   └─ 📄 setup.exe
+```
+
+- Creating/moving/deleting files
+- Organizational best practices:
+  - Clear naming conventions (`project_v2_final_REAL`)
+  - Logical folder hierarchy
+  - Regular backups
+
+<Note type="warning">
+  Always check file paths before deleting - system files are often hidden!
+</Note>
+
+### File Types and Extensions
+| Category | Examples       | Purpose                     |
+|----------|----------------|-----------------------------|
+| Text     | .txt, .md      | Unformatted text documents  |
+| Code     | .js, .html     | Programming source files    |
+| Media    | .jpg, .mp4     | Images, videos, audio       |
+| Archives | .zip, .tar     | Compressed file bundles     |
+
+Key concepts:
+- Extension determines file association (.html opens in browser)
+- Hidden files (e.g., .gitignore, .env)
+- Executable warnings (.exe, .sh, .bat)
 
 <CardGrid>
   <Card
-    subtitle="Instructions"
-    title="Installation"
-    description="Get started with Documents using our quick start installation guide to get your project started."
-    href="/docs/introduction/installation"
+    title="Practice Exercise"
+    subtitle="File Organization"
+    description="Create a 'projects' folder with subfolders for different file types"
+    href="/exercises/file-org"
   />
   <Card
-    subtitle="Setup"
-    title="Site Settings"
-    description="Setting up your Documents projects layout, links and search engine optimisation."
-    href="/docs/introduction/setup"
+    title="Next Steps"
+    subtitle="Development Environment"
+    description="Set up your coding workspace"
+    href="/docs/basics/ide-setup"
+  />
+</CardGrid>
+2. **Development Environment**: Setting up and customizing your IDE (Integrated Development Environment)
+3. **First Steps with HTML**: Learn the markup language that structures all web content
+
+<Note type="tip">
+  **Hands-On Approach:** We recommend practicing each concept as you learn. Web development skills are best acquired through active experimentation - don't hesitate to break things and fix them!
+</Note>
+
+<CardGrid>
+  <Card
+    subtitle="Foundations"
+    title="Computer Basics"
+    description="Essential computer skills and concepts every developer needs"
+    href="/docs/basics/computer-use"
   />
   <Card
-    subtitle="Support"
-    title="Rubix Studios"
-    description="Australia's leading branding, marketing and web development company."
-    href="https://www.rubixstudios.com.au/"
-    external={true}
+    subtitle="Tools"
+    title="IDE Setup Guide"
+    description="Choose and configure your development environment (VS Code recommended)"
+    href="/docs/basics/ide-setup"
+  />
+  <Card
+    subtitle="Web Fundamentals"
+    title="HTML Essentials"
+    description="Start building web page structures with hypertext markup language"
+    href="/docs/html/fundamentals"
   />
 </CardGrid>
 
-## Why Documents?
+## Why Start with HTML?
 
-Documents was created as an open-source project to help the community streamline their documentation process, enabling developers to focus on more critical
-tasks. Built with scalability in mind, it adapts to projects of all sizes, from single-page guides to comprehensive knowledge bases.
+HTML (HyperText Markup Language) forms the backbone of all web content. As a markup language rather than a programming language, it provides an accessible entry point to:
 
-The integration of MDX, custom components and Tailwind CSS ensures an intuitive experience, simplifying both content creation and management.
+- Understand content structure
+- Learn element hierarchy
+- Practice semantic organization
+- Prepare for CSS styling
+- Transition to dynamic content
 
-- **Product Guides**: Comprehensive manuals for product usage, setup and troubleshooting.
-- **Business Documentation**: Clear and structured documentation for internal processes, policies and systems.
-- **Technical Manuals**: Detailed guides for APIs, software development kits (SDKs) and technical processes.
+## Learning Progression
 
-Documents offers extensive customization options, allowing you to easily align the design and functionality with your branding.
-
-## Key Features
-
-Here are some of the features that make **Documents** ideal for building your documentation:
-
-| Feature                              | Description                                                                                                     |
-| ------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| **Content Creation**                 | Write documentation using Markdown with JSX, custom components and Mermaid.js for diagrams.                     |
-| **Navigation & Structure**           | Organize content with multi-level navigation, automatically generated tables of contents and smooth pagination. |
-| **Code Features**                    | Syntax highlighting, enhanced code blocks and a code switcher with copy functionality.                          |
-| **Advanced Search**                  | Fuzzy search with term highlighting for quick and accurate results.                                             |
-| **Theming & Layout**                 | Supports light/dark modes with automatic switching and responsive design.                                       |
-| **Math & Tables**                    | Seamless integration of LaTeX for math and structured tables.                                                   |
-| **SEO & Meta Tags**                  | Built-in SEO, metadata generation and control over meta tags for better search rankings and social sharing.     |
-| **AI-powered Docs (In Development)** | Future feature for AI-driven content discussions and search.                                                    |
-
-## How to Use These Documents
-
-You'll find the documentation's navigation bar on the left side of the screen. The pages are organized in a logical sequence, progressing from foundational
-topics to more advanced concepts, allowing you to follow along step-by-step as you build your documentation. However, feel free to explore the content in
-any order, selecting the sections most relevant to your use case.
-
-On the right side of the screen, a table of contents provides easy navigation between sections of each page. For quick access to specific content, you can
-use the search bar at the top or the search shortcut (`Ctrl+K` or `Cmd+K`).
-
-Head over to the [Installation Guide](/docs/introduction/installation).
+| Stage | Focus Area          | Key Skills                                                                 |
+| ----- | ------------------- | -------------------------------------------------------------------------- |
+| 1     | Computer Literacy   | File systems, basic terminal commands, software installation               |
+| 2     | Development Setup   | IDE configuration, extensions, workflow optimization                       |
+| 3     | HTML Fundamentals   | Semantic markup, forms, accessibility basics, document structure           |
 
 ## Join our Community
 
-If you have questions about anything related to Documents, you're always welcome to ask our community on [GitHub](https://github.com/rubixvi/rubix-documents), [X (Twitter)](https://x.com/rubixstory), [Facebook](https://www.facebook.com/rubixstudios)
+If you have questions about anything related to web development, you're always welcome to ask our community on [GitHub](https://github.com/rubixvi/rubix-documents), [X (Twitter)](https://x.com/rubixstory), [Facebook](https://www.facebook.com/rubixstudios)
 and [Reddit](https://www.reddit.com/r/RubixStudios/).
