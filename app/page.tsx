@@ -86,7 +86,7 @@ export default function Home() {
               size: "lg"
             })}
           >
-            git commit -m "start_learning"
+            git commit -m &quot;start_learning&quot;
           </Link>
         </div>
       </div>
