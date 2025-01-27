@@ -75,6 +75,8 @@ function removeCustomComponents() {
     "TabsTrigger",
     "pre",
     "Mermaid",
+    "Quiz",
+    "CodeEditor"
   ]
 
   return (tree: Node) => {
