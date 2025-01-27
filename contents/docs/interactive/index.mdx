@@ -1,0 +1,41 @@
+---
+title: Interactive Features
+description: Learn about the interactive features available in our documentation platform.
+---
+
+# Interactive Features
+
+Our documentation platform includes several interactive features to enhance your learning experience. This section will guide you through the usage of interactive quizzes and code editors.
+
+## Interactive Quizzes
+
+Interactive quizzes allow you to test your knowledge on various topics. Here's an example of how to use the `Quiz` component:
+
+```jsx
+import Quiz from "@/components/interactive/quiz";
+
+<Quiz questions={[
+  {
+    question: "What is React?",
+    options: ["Library", "Framework", "Language"],
+    correctAnswer: "Library"
+  },
+  {
+    question: "What is JSX?",
+    options: ["JavaScript XML", "JavaScript Extension", "Java Syntax"],
+    correctAnswer: "JavaScript XML"
+  }
+]} />
+```
+
+## Interactive Code Editor
+
+The interactive code editor allows you to write and run code directly within the documentation. Here's an example of how to use the `CodeEditor` component:
+
+```jsx
+import CodeEditor from "@/components/interactive/code-editor";
+
+<CodeEditor />
+```
+
+These interactive components are designed to make your learning experience more engaging and effective. Feel free to explore and use them in your own documentation.
