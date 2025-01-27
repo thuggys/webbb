@@ -1,6 +1,5 @@
 import { Sidebar } from "@/components/navigation/sidebar"
 import Quiz from "@/components/interactive/quiz"
-import CodeEditor from "@/components/interactive/code-editor"
 
 export default function Documents({
   children,
@@ -24,7 +23,6 @@ export default function Documents({
             correctAnswer: "JavaScript XML"
           }
         ]} />
-        <CodeEditor />
       </div>
     </div>
   )
