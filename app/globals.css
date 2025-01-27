@@ -24,6 +24,12 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
+
+    /* New color variables for dark grey/black with purple vibe */
+    --dark-grey: 240 5% 10%;
+    --black: 240 5% 5%;
+    --purple-vibe: 270 50% 40%;
+    --purple-vibe-foreground: 270 50% 90%;
   }
 
   .dark {
@@ -33,18 +39,18 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
+    --primary: var(--purple-vibe);
+    --primary-foreground: var(--purple-vibe-foreground);
+    --secondary: var(--dark-grey);
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
+    --muted: var(--dark-grey);
     --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
+    --accent: var(--dark-grey);
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --border: var(--dark-grey);
+    --input: var(--dark-grey);
     --ring: 240 4.9% 83.9%;
   }
 }
