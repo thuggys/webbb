@@ -53,6 +53,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // New color scheme for dark grey/black with purple vibe
+        darkGrey: "hsl(var(--dark-grey))",
+        black: "hsl(var(--black))",
+        purpleVibe: {
+          DEFAULT: "hsl(var(--purple-vibe))",
+          foreground: "hsl(var(--purple-vibe-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
