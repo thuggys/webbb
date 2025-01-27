@@ -1,5 +1,4 @@
 import { Sidebar } from "@/components/navigation/sidebar"
-import Quiz from "@/components/interactive/quiz"
 
 export default function Documents({
   children,
@@ -11,18 +10,6 @@ export default function Documents({
       <Sidebar />
       <div className="flex-1 md:flex-[6]">
         {children}
-        <Quiz questions={[
-          {
-            question: "What is React?",
-            options: ["Library", "Framework", "Language"],
-            correctAnswer: "Library"
-          },
-          {
-            question: "What is JSX?",
-            options: ["JavaScript XML", "JavaScript Extension", "Java Syntax"],
-            correctAnswer: "JavaScript XML"
-          }
-        ]} />
       </div>
     </div>
   )
