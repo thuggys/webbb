@@ -48,3 +48,79 @@ export default function RootLayout({
 ```
   </TabsContent>
 </Tabs>
+
+## Creating Tabs in Markdown
+
+To create tabs in markdown, you can use the `Tabs` and `TabsTrigger` components. Below are examples of how to create tabbed content in markdown files.
+
+### Example 1: Basic Tabs
+
+<Tabs defaultValue="tab1">
+  <TabsList>
+    <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">
+    <p>Content for Tab 1</p>
+  </TabsContent>
+  <TabsContent value="tab2">
+    <p>Content for Tab 2</p>
+  </TabsContent>
+</Tabs>
+
+```jsx
+<Tabs defaultValue="tab1">
+  <TabsList>
+    <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">
+    <p>Content for Tab 1</p>
+  </TabsContent>
+  <TabsContent value="tab2">
+    <p>Content for Tab 2</p>
+  </TabsContent>
+</Tabs>
+```
+
+### Example 2: Tabs with Code Snippets
+
+<Tabs defaultValue="code1">
+  <TabsList>
+    <TabsTrigger value="code1">Code 1</TabsTrigger>
+    <TabsTrigger value="code2">Code 2</TabsTrigger>
+  </TabsList>
+  <TabsContent value="code1">
+    ```jsx
+    const example = "Code snippet 1";
+    console.log(example);
+    ```
+  </TabsContent>
+  <TabsContent value="code2">
+    ```jsx
+    const example = "Code snippet 2";
+    console.log(example);
+    ```
+  </TabsContent>
+</Tabs>
+
+```jsx
+<Tabs defaultValue="code1">
+  <TabsList>
+    <TabsTrigger value="code1">Code 1</TabsTrigger>
+    <TabsTrigger value="code2">Code 2</TabsTrigger>
+  </TabsList>
+  <TabsContent value="code1">
+    ```jsx
+    const example = "Code snippet 1";
+    console.log(example);
+    ```
+  </TabsContent>
+  <TabsContent value="code2">
+    ```jsx
+    const example = "Code snippet 2";
+    console.log(example);
+    ```
+  </TabsContent>
+</Tabs>
+```
