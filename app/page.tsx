@@ -39,7 +39,6 @@ export default function Home() {
             ["02.", "Interactive CLI", "Navigate concepts through our command-line interface"],
             ["03.", "Community Backed", "Peer-reviewed documentation with version control"],
             ["04.", "Interactive Quizzes", "Test your knowledge with interactive quizzes"],
-            ["05.", "Code Editor", "Practice coding with our integrated code editor"],
           ].map(([number, title, description]) => (
             <div key={title} className="p-6 border-l-2 border-black dark:border-white">
               <div className="font-mono text-sm mb-4">{number}</div>
