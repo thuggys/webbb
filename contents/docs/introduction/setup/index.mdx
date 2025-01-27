@@ -78,3 +78,110 @@ export const loadfromgithub = false   // Set to true to load your MDX documents 
     description="Creating your navigation"
   />
 </CardGrid>
+
+## HTML Programming Guide
+
+HTML (HyperText Markup Language) is the standard markup language for creating web pages. It provides the structure and content of a webpage. Here are some key concepts and examples:
+
+### HTML Elements
+
+HTML elements are the building blocks of HTML pages. They are represented by tags. Here's an example of a simple HTML element:
+
+```html
+<p>This is a paragraph.</p>
+```
+
+### HTML Attributes
+
+HTML attributes provide additional information about elements. They are always included in the opening tag. Here's an example:
+
+```html
+<a href="https://www.example.com">Visit Example</a>
+```
+
+### HTML Forms
+
+HTML forms are used to collect user input. Here's an example of a simple HTML form:
+
+```html
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+  <input type="submit" value="Submit">
+</form>
+```
+
+## JavaScript Programming Guide
+
+JavaScript is a programming language that allows you to implement complex features on web pages. Here are some key concepts and examples:
+
+### JavaScript Variables
+
+Variables are used to store data values. Here's an example of how to declare a variable in JavaScript:
+
+```javascript
+let message = "Hello, World!";
+```
+
+### JavaScript Functions
+
+Functions are blocks of code designed to perform a particular task. Here's an example of a simple function:
+
+```javascript
+function greet(name) {
+  return "Hello, " + name;
+}
+```
+
+### JavaScript Event Listeners
+
+Event listeners allow you to run code in response to events. Here's an example of adding an event listener to a button:
+
+```html
+<button id="myButton">Click Me</button>
+
+<script>
+  document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button clicked!");
+  });
+</script>
+```
+
+## React Programming Guide
+
+React is a JavaScript library for building user interfaces. It allows you to create reusable components and manage the state of your application. Here are some key concepts and examples:
+
+### React Components
+
+React components are the building blocks of a React application. Here's an example of a simple React component:
+
+```jsx
+import React from 'react';
+
+function MyComponent() {
+  return <h1>Hello, React!</h1>;
+}
+
+export default MyComponent;
+```
+
+### React State Management
+
+React provides a way to manage the state of your application using hooks. Here's an example of a component with state:
+
+```jsx
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+export default Counter;
+```

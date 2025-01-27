@@ -12,7 +12,7 @@ export const Documents: Paths[] = [
       },
       {
         title: "Installation",
-        href: "/installation",
+        href: "/setup",
       },
       {
         title: "Setup",
