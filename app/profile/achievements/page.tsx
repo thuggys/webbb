@@ -26,7 +26,7 @@ export default function AchievementsPage() {
   useEffect(() => {
     const loadAchievements = async () => {
       const { data: { user } } = await supabase.auth.getUser()
-      if (!user) return router.push('/')
+      if (!user) return router.push('/profile')
       
       setUser(user)
       const { data } = await getAchievements(user.id)
@@ -53,7 +53,7 @@ export default function AchievementsPage() {
     const checkSession = async () => {
       const { data: { session } } = await supabase.auth.getSession()
       if (!session) {
-        router.push('/')
+        router.push('/profile')
       } else {
         setUser(session.user)
       }

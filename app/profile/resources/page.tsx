@@ -11,10 +11,24 @@ export default function ResourcesPage() {
   useEffect(() => {
     const checkAuth = async () => {
       const { data: { session } } = await supabase.auth.getSession()
-      if (!session) router.push('/')
+      if (!session) router.push('/profile')
       setLoading(false)
     }
     checkAuth()
+  }, [router])
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const { data: { user }, error } = await supabase.auth.getUser()
+      if (error) {
+        console.error('Error fetching user data:', error.message)
+        return
+      }
+      if (!user) {
+        router.push('/profile')
+      }
+    }
+    fetchUserData()
   }, [router])
 
   if (loading) return <div>Loading...</div>

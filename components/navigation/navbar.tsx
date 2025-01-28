@@ -48,6 +48,18 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
+    const checkSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession()
+      if (!session) {
+        setIsAuthModalOpen(true)
+      } else {
+        setUser(session.user)
+      }
+    }
+    checkSession()
+  }, [])
+
+  useEffect(() => {
     if (user) {
       // Always show welcome modal on login
       setShowWelcome(true)
@@ -56,6 +68,18 @@ export function Navbar() {
       // localStorage.removeItem(`welcomeShown_${user.id}`)
     }
   }, [user])
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const { data: { user }, error } = await supabase.auth.getUser()
+      if (error) {
+        console.error('Error fetching user data:', error.message)
+        return
+      }
+      setUser(user)
+    }
+    fetchUserData()
+  }, [])
 
   const handleOAuthLogin = async (provider: "github" | "google") => {
     const { error } = await supabase.auth.signInWithOAuth({ provider })
@@ -349,7 +373,7 @@ export function NavMenu({ isSheet = false, user }: NavMenuProps) {
       })}
       {user && (
         <Anchor
-          href="/profile"
+          href="/profile#"
           activeClassName="font-bold text-primary"
           className="flex items-center gap-1 text-sm"
           absolute
