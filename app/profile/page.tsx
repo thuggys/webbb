@@ -9,6 +9,7 @@ import Link from 'next/link'
 
 export default function ProfilePage() {
   const [user, setUser] = useState<User | null>(null)
+  const [loading, setLoading] = useState(true)
   const router = useRouter()
 
   useEffect(() => {
@@ -16,11 +17,13 @@ export default function ProfilePage() {
       const { data: { session } } = await supabase.auth.getSession()
       if (!session) router.push('/')
       setUser(session?.user ?? null)
+      setLoading(false)
     }
     getSession()
   }, [router])
 
-  if (!user) return <div>Loading...</div>
+  if (loading) return <div>Loading...</div>
+  if (!user) return <div>No user session found</div>
 
   return (
     <div className="space-y-8">
@@ -69,4 +72,4 @@ export default function ProfilePage() {
       </div>
     </div>
   )
-} 
+}

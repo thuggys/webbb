@@ -20,6 +20,7 @@ interface Achievement {
 export default function AchievementsPage() {
   const [user, setUser] = useState<User | null>(null)
   const [achievements, setAchievements] = useState<Achievement[]>([])
+  const [loading, setLoading] = useState(true)
   const router = useRouter()
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export default function AchievementsPage() {
       setUser(user)
       const { data } = await getAchievements(user.id)
       setAchievements(data || [])
+      setLoading(false)
     }
 
     loadAchievements()
@@ -46,6 +48,21 @@ export default function AchievementsPage() {
       supabase.removeChannel(channel)
     }
   }, [router])
+
+  useEffect(() => {
+    const checkSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession()
+      if (!session) {
+        router.push('/')
+      } else {
+        setUser(session.user)
+      }
+      setLoading(false)
+    }
+    checkSession()
+  }, [router])
+
+  if (loading) return <div>Loading...</div>
 
   const filteredAchievements = achievements.filter(achievement => {
     if (achievement.type === ACHIEVEMENT_TYPES.CONTRIBUTIONS) {

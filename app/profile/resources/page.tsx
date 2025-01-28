@@ -1,19 +1,23 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabaseClient"
 
 export default function ResourcesPage() {
   const router = useRouter()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const checkAuth = async () => {
       const { data: { session } } = await supabase.auth.getSession()
       if (!session) router.push('/')
+      setLoading(false)
     }
     checkAuth()
   }, [router])
+
+  if (loading) return <div>Loading...</div>
 
   return (
     <div className="space-y-6">
