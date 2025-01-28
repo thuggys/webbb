@@ -48,6 +48,18 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
+    const checkSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession()
+      if (!session) {
+        setIsAuthModalOpen(true)
+      } else {
+        setUser(session.user)
+      }
+    }
+    checkSession()
+  }, [])
+
+  useEffect(() => {
     if (user) {
       // Always show welcome modal on login
       setShowWelcome(true)
