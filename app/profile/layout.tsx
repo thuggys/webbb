@@ -12,17 +12,6 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
-    const checkAuth = async () => {
-      const { data: { session } } = await supabase.auth.getSession()
-      if (!session) {
-        router.push('/')
-        return
-      }
-      setUser(session.user)
-    }
-    checkAuth()
-    
-    // Add auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       if (!session) {
         router.push('/')
@@ -30,6 +19,10 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
         setUser(session.user)
       }
     })
+
+    // Immediately check session instead of async
+    const session = supabase.auth.getSession()
+    if (!session) router.push('/')
 
     return () => subscription?.unsubscribe()
   }, [router])

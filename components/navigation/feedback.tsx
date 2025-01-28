@@ -24,9 +24,14 @@ export default function RightSideBar({ slug, title }: SideBarEdit) {
           className={cn(
             "text-sm text-neutral-800 dark:text-neutral-300/85 no-underline flex items-center"
           )}
+          aria-describedby="feedback-description"
         >
           <LuArrowUpRight className="mr-1 w-4 h-4 inline-block" /> Feedback
         </Link>
+        <p id="feedback-description" className="sr-only">
+          Provide feedback about this page through GitHub issues
+        </p>
+        
         <Link
           href={editUrl}
           target="_blank"
@@ -34,9 +39,13 @@ export default function RightSideBar({ slug, title }: SideBarEdit) {
           className={cn(
             "text-sm text-neutral-800 dark:text-neutral-300/85 no-underline flex items-center"
           )}
+          aria-describedby="edit-description"
         >
           <LuArrowUpRight className="mr-1 w-4 h-4 inline-block" /> Edit page
         </Link>
+        <p id="edit-description" className="sr-only">
+          Edit this page's content through GitHub
+        </p>
       </div>
     </div>
   )
