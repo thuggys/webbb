@@ -19,7 +19,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import { DialogTrigger } from "@/components/ui/dialog"
-import { DialogTrigger as RadixDialogTrigger } from "@radix-ui/react-dialog"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { supabase } from "@/lib/supabaseClient"
@@ -32,7 +31,6 @@ type NavMenuProps = {
 }
 
 export function Navbar() {
-  const [showEmailForm, setShowEmailForm] = useState(false)
   const [currentView, setCurrentView] = useState<"options" | "email">("options")
   const [user, setUser] = useState<User | null>(null)
   const [email, setEmail] = useState("")

@@ -21,12 +21,6 @@ export default function ProfilePage() {
     getSession()
   }, [router])
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut()
-    toast('Successfully signed out')
-    router.push('/')
-  }
-
   if (!user) return <div>Loading...</div>
 
   return (

@@ -44,4 +44,8 @@ export async function initializeUserAchievements(user: any) {
 
   const { error } = await supabase.from('achievements').upsert(baseAchievements)
   return { error }
+}
+
+export const checkAchievementProgress = async (userId: string, type: AchievementType, data?: Record<string, unknown>) => {
+  // Implementation of the function
 } 
