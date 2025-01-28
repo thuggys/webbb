@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     }
   }
 
-  const { data, error: dbError } = await supabase.rpc('increment_achievement', {
+  const { error: dbError } = await supabase.rpc('increment_achievement', {
     user_id: user.id,
     achievement_type: type,
     increment_by: 1

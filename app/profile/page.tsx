@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { buttonVariants } from '@/components/ui/button'
 import { toast } from 'sonner'
 import { User } from '@supabase/supabase-js'
+import Link from 'next/link'
 
 export default function ProfilePage() {
   const [user, setUser] = useState<User | null>(null)
@@ -49,12 +50,12 @@ export default function ProfilePage() {
               Master the basics of web development
             </p>
             <div className="mt-4 flex justify-end">
-              <a
+              <Link
                 href="/docs/html-fundamentals"
                 className={buttonVariants({ variant: "outline" })}
               >
                 Start Learning
-              </a>
+              </Link>
             </div>
           </div>
           <div className="rounded-lg border p-6">
@@ -63,12 +64,12 @@ export default function ProfilePage() {
               Advanced concepts and patterns
             </p>
             <div className="mt-4 flex justify-end">
-              <a
+              <Link
                 href="/docs/javascript"
                 className={buttonVariants({ variant: "outline" })}
               >
                 Continue
-              </a>
+              </Link>
             </div>
           </div>
         </div>

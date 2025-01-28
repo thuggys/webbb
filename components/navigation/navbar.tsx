@@ -15,13 +15,12 @@ import { ModeToggle } from "@/components/navigation/theme-toggle"
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
 import { DialogTrigger } from "@/components/ui/dialog"
 import { DialogTrigger as RadixDialogTrigger } from "@radix-ui/react-dialog"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { supabase } from "@/lib/supabaseClient"
 import { toast } from 'sonner'
@@ -29,7 +28,7 @@ import { User } from '@supabase/supabase-js'
 
 type NavMenuProps = {
   isSheet?: boolean
-  user?: any // Consider using proper User type from Supabase
+  user?: User | null
 }
 
 export function Navbar() {
@@ -310,7 +309,7 @@ export function Navbar() {
                   }}
                 />
                 <label htmlFor="dontShowAgain" className="text-amber-300/80 text-sm">
-                  Don't show this welcome message again
+                  Don&apos;t show this welcome message again
                 </label>
               </motion.div>
             </div>
