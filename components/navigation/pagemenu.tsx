@@ -6,7 +6,7 @@ import { Routes } from "@/lib/pageroutes"
 import SubLink from "@/components/navigation/sublink"
 
 export default function PageMenu({ isSheet = false }) {
-  const pathname = usePathname()
+  const pathname = usePathname() || ""
   if (!pathname.startsWith("/docs")) return null
 
   return (
