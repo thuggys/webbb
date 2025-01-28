@@ -240,13 +240,14 @@ export function Navbar() {
                       exit={{ opacity: 0, x: -50 }}
                       className="flex flex-col gap-4 py-4"
                     >
-                      <Link
+                      <Anchor
                         href="/profile"
-                        onClick={() => setIsAuthModalOpen(false)}
-                        className={buttonVariants({ className: 'w-full' })}
+                        activeClassName="font-bold text-primary"
+                        className="flex items-center gap-1 text-sm"
+                        absolute
                       >
-                        View Profile
-                      </Link>
+                        Profile
+                      </Anchor>
                       <button
                         className={buttonVariants({ variant: "destructive" })}
                         onClick={handleLogout}
