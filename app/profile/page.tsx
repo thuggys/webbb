@@ -22,6 +22,18 @@ export default function ProfilePage() {
     getSession()
   }, [router])
 
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const { data: { user }, error } = await supabase.auth.getUser()
+      if (error) {
+        console.error('Error fetching user data:', error.message)
+        return
+      }
+      setUser(user)
+    }
+    fetchUserData()
+  }, [])
+
   if (loading) return <div>Loading...</div>
   if (!user) return <div>No user session found</div>
 

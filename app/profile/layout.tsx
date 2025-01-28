@@ -48,6 +48,18 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
     initializeAchievements()
   }, [user])
 
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const { data: { user }, error } = await supabase.auth.getUser()
+      if (error) {
+        console.error('Error fetching user data:', error.message)
+        return
+      }
+      setUser(user)
+    }
+    fetchUserData()
+  }, [])
+
   // Show loading state while checking auth
   if (loading) return <div className="flex-1 p-6 md:p-10">Loading...</div>
 

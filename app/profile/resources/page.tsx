@@ -17,6 +17,20 @@ export default function ResourcesPage() {
     checkAuth()
   }, [router])
 
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const { data: { user }, error } = await supabase.auth.getUser()
+      if (error) {
+        console.error('Error fetching user data:', error.message)
+        return
+      }
+      if (!user) {
+        router.push('/profile')
+      }
+    }
+    fetchUserData()
+  }, [router])
+
   if (loading) return <div>Loading...</div>
 
   return (

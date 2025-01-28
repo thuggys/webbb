@@ -69,6 +69,18 @@ export function Navbar() {
     }
   }, [user])
 
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const { data: { user }, error } = await supabase.auth.getUser()
+      if (error) {
+        console.error('Error fetching user data:', error.message)
+        return
+      }
+      setUser(user)
+    }
+    fetchUserData()
+  }, [])
+
   const handleOAuthLogin = async (provider: "github" | "google") => {
     const { error } = await supabase.auth.signInWithOAuth({ provider })
     if (error) {
