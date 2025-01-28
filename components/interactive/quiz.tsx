@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 
 type Question = {
@@ -20,7 +22,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
     setSelectedOption(option);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
       setScore(score + 1);
     }
@@ -31,6 +33,22 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
       setSelectedOption(null);
     } else {
       setShowScore(true);
+    }
+
+    const trackProgress = async () => {
+      try {
+        await fetch('/api/achievements', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ type: 'lessons' })
+        })
+      } catch (error) {
+        console.error('Failed to track progress:', error)
+      }
+    }
+
+    if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
+      trackProgress();
     }
   };
 

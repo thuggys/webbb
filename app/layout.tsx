@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { GoogleTagManager } from "@next/third-parties/google"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
+import { Toaster } from 'sonner'
 
 import { Settings } from "@/lib/meta"
 import { Footer } from "@/components/navigation/footer"
@@ -65,6 +66,7 @@ export default function RootLayout({
           <main className="px-5 sm:px-8 h-auto">{children}</main>
           <Footer />
         </ThemeProvider>
+        <Toaster position="top-center" richColors />
       </body>
     </html>
   )

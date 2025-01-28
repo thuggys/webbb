@@ -11,8 +11,8 @@ import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 import { Node } from "unist"
 import { visit } from "unist-util-visit"
+import dynamic from "next/dynamic"
 
-import { components } from "@/lib/components"
 import { Settings } from "@/lib/meta"
 import { PageRoutes } from "@/lib/pageroutes"
 
@@ -203,4 +203,22 @@ const postCopy = () => (tree: Node) => {
       node.properties["raw"] = node.raw
     }
   })
+}
+
+// Update components registration to include all necessary components
+const components = {
+  Tabs: dynamic(() => import("@/components/ui/tabs").then(mod => mod.Tabs)),
+  TabsList: dynamic(() => import("@/components/ui/tabs").then(mod => mod.TabsList)),
+  TabsTrigger: dynamic(() => import("@/components/ui/tabs").then(mod => mod.TabsTrigger)),
+  TabsContent: dynamic(() => import("@/components/ui/tabs").then(mod => mod.TabsContent)),
+  pre: dynamic(() => import("@/components/ui/pre")),
+  Mermaid: dynamic(() => import("@/components/markdown/mermaid")),
+  Card: dynamic(() => import("@/components/markdown/card")),
+  CardGrid: dynamic(() => import("@/components/markdown/cardgrid")),
+  FileTree: dynamic(() => import("@/components/markdown/dynamic-filetree").then(mod => mod.FileTree)),
+  Folder: dynamic(() => import("@/components/markdown/filetree").then(mod => mod.Folder)),
+  File: dynamic(() => import("@/components/markdown/filetree").then(mod => mod.File)),
+  Note: dynamic(() => import("@/components/markdown/note")),
+  Step: dynamic(() => import("@/components/markdown/step").then(mod => mod.Step)),
+  StepItem: dynamic(() => import("@/components/markdown/step").then(mod => mod.StepItem)),
 }

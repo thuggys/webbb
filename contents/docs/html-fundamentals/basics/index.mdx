@@ -1,0 +1,42 @@
+---
+title: HTML Basics
+---
+
+## What is HTML?
+
+HTML (HyperText Markup Language) is the standard markup language for creating web pages. It provides the structure and content of a webpage, using elements to define different parts of the page. 
+
+### Key Concepts
+
+- **Elements:** The building blocks of HTML, represented by tags (e.g., `<p>`, `<h1>`, `<a>`).
+- **Tags:** Keywords enclosed in angle brackets that define the start and end of an element (e.g., `<p>This is a paragraph</p>`).
+- **Attributes:** Provide additional information about an element, specified within the opening tag (e.g., `<a href="https://example.com">Link</a>`).
+- **Structure:** HTML documents have a basic structure, including the `<html>`, `<head>`, and `<body>` elements.
+
+### Basic HTML Structure
+
+
+return (
+  <div className="mt-6 space-y-4">
+    <h3 className="text-xl font-semibold">HTML Resources</h3>
+    <Note type="success">
+      For official HTML documentation and latest updates, visit:
+      <br />
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         className="text-blue-600 hover:text-blue-800 dark:text-blue-400">
+        MDN Web Docs - HTML
+      </a>
+    </Note>
+    <div className="p-4 bg-secondary rounded-md">
+      <h4 className="font-medium mb-2">Recommended Learning Path:</h4>
+      <ul className="list-disc pl-6 space-y-2">
+        <li>HTML Elements and Structure</li>
+        <li>Forms and Input Validation</li>
+        <li>Semantic HTML5 Elements</li>
+        <li>Accessibility Fundamentals</li>
+      </ul>
+    </div>
+  </div>
+)
