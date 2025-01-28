@@ -373,7 +373,7 @@ export function NavMenu({ isSheet = false, user }: NavMenuProps) {
       })}
       {user && (
         <Anchor
-          href="/profile"
+          href="/profile#"
           activeClassName="font-bold text-primary"
           className="flex items-center gap-1 text-sm"
           absolute
