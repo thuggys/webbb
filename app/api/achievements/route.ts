@@ -1,9 +1,9 @@
-import { createClient } from '@/lib/supabase/server'
+import { supabaseServer } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 import { ACHIEVEMENT_TYPES } from '@/lib/achievements'
 
 export async function POST(req: Request) {
-  const supabase = createClient()
+  const supabase = supabaseServer()
   const { data: { user }, error } = await supabase.auth.getUser()
 
   if (!user || error) {
