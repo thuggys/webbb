@@ -16,7 +16,7 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
     const checkAuth = async () => {
       const { data: { session } } = await supabase.auth.getSession()
       if (!session) {
-        router.push('/')
+        router.push('/profile')
         return
       }
       setUser(session.user)
@@ -27,7 +27,7 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
     // Add auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       if (!session) {
-        router.push('/')
+        router.push('/profile')
       } else {
         setUser(session.user)
       }

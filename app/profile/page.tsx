@@ -15,7 +15,7 @@ export default function ProfilePage() {
   useEffect(() => {
     const getSession = async () => {
       const { data: { session } } = await supabase.auth.getSession()
-      if (!session) router.push('/')
+      if (!session) router.push('/profile')
       setUser(session?.user ?? null)
       setLoading(false)
     }
