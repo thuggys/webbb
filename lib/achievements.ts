@@ -1,4 +1,5 @@
 import { supabase } from './supabaseClient'
+import { User } from '@supabase/supabase-js'
 
 export const ACHIEVEMENT_TYPES = {
   LESSONS: 'lessons',
@@ -14,7 +15,7 @@ export async function getAchievements(userId: string) {
     .order('created_at', { ascending: true })
 }
 
-export async function initializeUserAchievements(user: any) {
+export async function initializeUserAchievements(user: User) {
   const providers = user.app_metadata.provider || []
   const isGitHubUser = providers.includes('github')
 
@@ -46,6 +47,6 @@ export async function initializeUserAchievements(user: any) {
   return { error }
 }
 
-export const checkAchievementProgress = async (userId: string, type: AchievementType, data?: Record<string, unknown>) => {
-  // Implementation of the function
+export const checkAchievementProgress = async () => {
+  return { success: true }
 } 

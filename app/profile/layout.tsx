@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabaseClient"
 import ProfileSidebar from "./sidebar"
 import { getAchievements, initializeUserAchievements } from "@/lib/achievements"
+import { User } from '@supabase/supabase-js'
 
 export default function ProfileLayout({ children }: { children: ReactNode }) {
   const router = useRouter()

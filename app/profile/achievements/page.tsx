@@ -6,9 +6,10 @@ import { supabase } from '@/lib/supabaseClient'
 import { getAchievements } from '@/lib/achievements'
 import { Progress } from '@/components/ui/progress'
 import { ACHIEVEMENT_TYPES } from '@/lib/achievements'
+import { User } from '@supabase/supabase-js'
 
 export default function AchievementsPage() {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
   const [achievements, setAchievements] = useState<any[]>([])
   const router = useRouter()
 

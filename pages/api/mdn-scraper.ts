@@ -1,5 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+// Add proper type for RSS item
+interface RSSItem {
+  title: string
+  link: string
+  pubDate: string
+  content?: string
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -29,7 +37,7 @@ export default async function handler(
         source: "Mozilla Developer Network",
         lastUpdated: new Date().toISOString()
       },
-      articles: data.items?.map((item: any) => ({
+      articles: data.items?.map((item: RSSItem) => ({
         title: item.title,
         url: item.link,
         date: new Date(item.pubDate).toLocaleDateString('en-US', {
