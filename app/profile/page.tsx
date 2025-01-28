@@ -12,15 +12,30 @@ export default function ProfilePage() {
   const router = useRouter()
 
   useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (!session) {
+        router.push('/')
+      } else {
+        setUser(session.user)
+      }
+    })
+
+    // Initial session check
     const getSession = async () => {
       const { data: { session } } = await supabase.auth.getSession()
       if (!session) router.push('/')
       setUser(session?.user ?? null)
     }
     getSession()
+
+    return () => subscription?.unsubscribe()
   }, [router])
 
-  if (!user) return <div>Loading...</div>
+  if (!user) return (
+    <div className="flex justify-center p-8">
+      <div className="animate-pulse">Loading profile...</div>
+    </div>
+  )
 
   return (
     <div className="space-y-8">

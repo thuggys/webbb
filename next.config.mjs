@@ -9,7 +9,7 @@ const nextConfig = {
         has: [
           {
             type: 'cookie',
-            key: 'sb-auth-token',
+            key: 'sb-sotwceufcalevxvnkgno-auth-token',
           }
         ]
       },
@@ -20,7 +20,7 @@ const nextConfig = {
         missing: [
           {
             type: 'cookie',
-            key: 'sb-auth-token',
+            key: 'sb-sotwceufcalevxvnkgno-auth-token',
           }
         ]
       }
