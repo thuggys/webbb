@@ -1,20 +1,22 @@
+// Add MDX components configuration
+export const mdxComponents = {};
 export const Documents = [
     {
-        title: "Introduction",
+        title: "Getting Started",
         href: "/introduction",
-        heading: "Getting started",
+        heading: "Getting Started",
         items: [
             {
-                title: "Learn to learn",
+                title: "Learn to Learn",
                 href: "/welcome",
             },
             {
-                title: "Installation",
-                href: "/installation",
+                title: "Why Code?",
+                href: "/why-code",
             },
             {
-                title: "Setup",
-                href: "/setup",
+                title: "How to PC",
+                href: "/how-to-pc",
             },
             {
                 title: "Changelog",
@@ -26,29 +28,25 @@ export const Documents = [
         spacer: true,
     },
     {
-        title: "Navigation",
+        title: "Core Concepts",
         href: "/navigation",
         heading: "Documents",
     },
     {
-        title: "Structure",
-        href: "/structure",
+        title: "HTML Fundamentals",
+        href: "/html-fundamentals",
         items: [
             {
-                title: "Deep",
-                href: "/deep",
-                items: [
-                    {
-                        title: "Deeper",
-                        href: "/deeper",
-                        items: [
-                            {
-                                title: "Even deeper",
-                                href: "/even-deeper",
-                            },
-                        ],
-                    },
-                ],
+                title: "HTML Basics",
+                href: "/basics",
+            },
+            {
+                title: "CSS Styling",
+                href: "/css",
+            },
+            {
+                title: "JavaScript Magic",
+                href: "/javascript",
             },
         ],
     },

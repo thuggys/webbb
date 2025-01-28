@@ -60,6 +60,8 @@ function removeCustomComponents() {
         "TabsTrigger",
         "pre",
         "Mermaid",
+        "Quiz",
+        "CodeEditor"
     ];
     return (tree) => {
         visit(tree, "mdxJsxFlowElement", (node, index, parent) => {
