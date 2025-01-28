@@ -30,7 +30,7 @@ export default function SubLink(
       isRoute(props) &&
       props.href &&
       path !== props.href &&
-      path.includes(props.href)
+      path?.includes(props.href)
     ) {
       setIsOpen(true)
     }
