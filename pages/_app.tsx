@@ -1,8 +1,9 @@
+import type { AppProps } from 'next/app'
 import { supabase } from '@/lib/supabaseClient'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-function MyApp({ Component, pageProps }: { Component: React.ComponentType<any>; pageProps: any }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
@@ -14,7 +15,7 @@ function MyApp({ Component, pageProps }: { Component: React.ComponentType<any>; 
     })
 
     return () => authListener?.subscription.unsubscribe()
-  }, [])
+  }, [router])
 
   return <Component {...pageProps} />
 }
