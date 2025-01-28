@@ -10,6 +10,7 @@ import { User } from '@supabase/supabase-js'
 export default function ProfileLayout({ children }: { children: ReactNode }) {
   const router = useRouter()
   const [user, setUser] = useState<User | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -19,6 +20,7 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
         return
       }
       setUser(session.user)
+      setLoading(false)
     }
     checkAuth()
     
@@ -47,7 +49,7 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
   }, [user])
 
   // Show loading state while checking auth
-  if (!user) return <div className="flex-1 p-6 md:p-10">Loading...</div>
+  if (loading) return <div className="flex-1 p-6 md:p-10">Loading...</div>
 
   return (
     <div className="flex min-h-screen w-full">
@@ -55,4 +57,4 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
       <main className="flex-1 p-6 md:p-10">{children}</main>
     </div>
   )
-} 
+}
