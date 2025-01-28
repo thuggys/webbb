@@ -4,7 +4,6 @@ import { supabase } from '@/lib/supabaseClient'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { buttonVariants } from '@/components/ui/button'
-import { toast } from 'sonner'
 import { User } from '@supabase/supabase-js'
 import Link from 'next/link'
 

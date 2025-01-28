@@ -8,9 +8,18 @@ import { Progress } from '@/components/ui/progress'
 import { ACHIEVEMENT_TYPES } from '@/lib/achievements'
 import { User } from '@supabase/supabase-js'
 
+interface Achievement {
+  id: string
+  user_id: string
+  type: string
+  progress: number
+  target: number
+  created_at: string
+}
+
 export default function AchievementsPage() {
   const [user, setUser] = useState<User | null>(null)
-  const [achievements, setAchievements] = useState<any[]>([])
+  const [achievements, setAchievements] = useState<Achievement[]>([])
   const router = useRouter()
 
   useEffect(() => {

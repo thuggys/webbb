@@ -9,7 +9,7 @@ import { User } from '@supabase/supabase-js'
 
 export default function ProfileLayout({ children }: { children: ReactNode }) {
   const router = useRouter()
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     const checkAuth = async () => {
