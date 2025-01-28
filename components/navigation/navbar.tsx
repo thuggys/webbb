@@ -351,6 +351,7 @@ export function NavMenu({ isSheet = false, user }: NavMenuProps) {
           href="/profile"
           activeClassName="font-bold text-primary"
           className="flex items-center gap-1 text-sm"
+          absolute
         >
           Profile
         </Anchor>

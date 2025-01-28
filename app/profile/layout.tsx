@@ -16,11 +16,22 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
       const { data: { session } } = await supabase.auth.getSession()
       if (!session) {
         router.push('/')
+        return
+      }
+      setUser(session.user)
+    }
+    checkAuth()
+    
+    // Add auth state listener
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (!session) {
+        router.push('/')
       } else {
         setUser(session.user)
       }
-    }
-    checkAuth()
+    })
+
+    return () => subscription?.unsubscribe()
   }, [router])
 
   useEffect(() => {
@@ -34,6 +45,9 @@ export default function ProfileLayout({ children }: { children: ReactNode }) {
     }
     initializeAchievements()
   }, [user])
+
+  // Show loading state while checking auth
+  if (!user) return <div className="flex-1 p-6 md:p-10">Loading...</div>
 
   return (
     <div className="flex min-h-screen w-full">
