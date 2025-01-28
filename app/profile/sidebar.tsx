@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 import { cn } from "@/lib/utils"
+import { User } from '@supabase/supabase-js'
 
 const sidebarItems = [
   { name: "Dashboard", href: "/profile" },
@@ -14,7 +15,7 @@ const sidebarItems = [
 
 export default function ProfileSidebar() {
   const pathname = usePathname()
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
