@@ -16,19 +16,26 @@ export async function getAchievements(userId: string) {
 }
 
 export async function initializeUserAchievements(user: User) {
-  const providers = user.app_metadata.provider || []
-  const isGitHubUser = providers.includes('github')
+  // Safely handle provider type conversion
+  const providers = ((user.app_metadata.provider || []) as unknown) as string[];
+  const isGitHubUser = providers.includes('github');
 
-  const baseAchievements = [
+  // Define base achievements with explicit type
+  const baseAchievements: Array<{
+    user_id: string
+    type: keyof typeof ACHIEVEMENT_TYPES
+    progress: number
+    target: number
+  }> = [
     {
       user_id: user.id,
-      type: ACHIEVEMENT_TYPES.LESSONS,
+      type: 'LESSONS',
       progress: 0,
       target: 5
     },
     {
       user_id: user.id,
-      type: ACHIEVEMENT_TYPES.CHALLENGES,
+      type: 'CHALLENGES',
       progress: 0,
       target: 10
     }
@@ -37,7 +44,7 @@ export async function initializeUserAchievements(user: User) {
   if (isGitHubUser) {
     baseAchievements.push({
       user_id: user.id,
-      type: ACHIEVEMENT_TYPES.CONTRIBUTIONS,
+      type: 'CONTRIBUTIONS',
       progress: 0,
       target: 1
     })
